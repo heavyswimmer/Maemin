@@ -11,22 +11,27 @@
 
 ## Architecture
 
-## Team
-<table align="center">
-  <tr height="140px">
+## Contributors
+<table>
+  <tr>
     <td align="center">
-      <a href="https://github.com/heejinna"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/87808507?v=4"/></a>
-      <br>
-      <a href="https://github.com/heejinna">heejinna</a>
+      <img src="https://github.com/heejinna.png" width="80">
     </td>
     <td align="center">
-      <a href="https://github.com/alsth712"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/81960250?v=4"/></a>
-      <br>
+      <img src="https://github.com/alsth712.png" width="80">
+    </td>
+    <td align="center">
+      <img src="https://github.com/leejaypower.png" width="80">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/heejinna">Heejin Na</a>
+    </td>
+    <td align="center">
       <a href="https://github.com/alsth712">alsth712</a>
     </td>
     <td align="center">
-      <a href="https://github.com/leejaypower"><img height="100px" width="100px" src="https://avatars.githubusercontent.com/u/50367569?v=4"/></a>
-      <br>
       <a href="https://github.com/leejaypower">Jay Lee</a>
     </td>
   </tr>
