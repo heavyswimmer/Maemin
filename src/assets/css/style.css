@@ -1,0 +1,479 @@
+@font-face {
+  font-family: "BMHANNAPro";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_seven@1.0/BMHANNAPro.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  font-family: "Pretendard-Regular";
+}
+
+.hide {
+  display: none;
+}
+
+.main-title {
+  display: block;
+  width: 280px;
+}
+
+h1 > span {
+  font-family: "BMHANNAPro";
+  font-size: 3rem;
+}
+
+button {
+  background-color: #2ac1bc;
+  font-family: "BMHANNAPro";
+}
+
+#locationBtn {
+  background-color: #ffffff;
+  border: 0px;
+}
+
+#locationBtn > img {
+  width: 17px;
+}
+
+.main-character {
+  display: inline-block;
+}
+
+#startBtn {
+  width: 500px;
+  height: 75px;
+  border-radius: 8px;
+  border: 0px;
+  font-size: 2rem;
+  color: #fefbf9;
+  box-shadow: 1px 7px 6px -1px #c5c5c5;
+}
+
+#startBtn:hover {
+  color: #a7e4e2;
+}
+
+/* 결과 페이지 css */
+/* 주석처리는 배경색 및 레이아웃 */
+/* 
+body {
+  width: 100%;
+  height: 100%;
+  background: #242424;
+} 
+*/
+
+/* 
+#result {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+} 
+*/
+
+.head {
+  font-family: "BMHANNAPro";
+  font-size: 4rem;
+  margin-left: 20%;
+  color: white;
+}
+
+#foodName {
+  font-family: "BMHANNAPro";
+  font-size: 4rem;
+  color: #ff9e2c;
+}
+
+.congrats {
+  opacity: 0.3;
+  text-align: center;
+}
+
+.food {
+  font-family: "BMHANNAPro";
+  font-size: 8rem;
+  /*  
+  position: relative;
+  text-align: center;
+  top: -230px;
+  margin-bottom: -160px;
+*/
+  color: #ff9e2c;
+}
+
+.hashtag {
+  font-family: "BMHANNAPro";
+  font-size: 2rem;
+  margin: 30px 20%;
+  color: #2ac1bc;
+}
+
+#explanation {
+  font-family: "BMHANNAPro";
+  font-size: 2rem;
+  color: white;
+}
+
+#hotPlace,
+#again {
+  width: 250px;
+  height: 70px;
+  border-radius: 8px;
+  border: 0px;
+  font-size: 1.5rem;
+  color: #fefbf9;
+  box-shadow: 1px 7px 6px -1px #2b2a2a;
+  margin: 0 30px;
+}
+
+#hotPlace:hover,
+#again:hover {
+  color: #a7e4e2;
+}
+
+/* 결과 페이지 css 끝 */
+
+/* ======== 제이 파트 ======== */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+/* 카카오 api css */
+.map_wrap,
+.map_wrap * {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+}
+.map_wrap a,
+.map_wrap a:hover,
+.map_wrap a:active {
+  color: #000;
+  text-decoration: none;
+}
+.map_wrap {
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+#menu_wrap {
+  position: absolute;
+  top: 0;
+  left: 74vw;
+  bottom: 0;
+  width: 20%;
+  height: 600px;
+  margin: 50px 0 30px 10px;
+  padding: 5px;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 1;
+  font-size: 12px;
+  border-radius: 10px;
+  background-color: transparent;
+}
+​
+#menu_wrap::-webkit-scrollbar {
+  display: none;
+}
+​
+/* #menu_wrap .option {
+  text-align: center;
+}
+#menu_wrap .option p {
+  margin: 10px 0;
+}
+#menu_wrap .option button {
+  margin-left: 5px;
+} */
+​
+#placesList li {
+  list-style: none;
+  box-shadow: 1px 7px 6px -1px #5e5d5d;
+}
+#placesList .item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  min-height: 120px;
+  border-radius: 10px;
+  background-color: white;
+  margin-bottom: 15px;
+  transition: background 0.15s ease-in-out;
+}
+​
+#placesList .item:hover {
+  background-color: #2bc1bc;
+}
+​
+#placesList .item .info {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #858383;
+  padding: 10px 10px 10px 40px;
+  font-size: 1.7rem;
+  min-height: 100px;
+}
+​
+#placesList .item .info :first-child {
+  width: inherit;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 1.2rem;
+  font-family: "BMHANNAPro";
+  pointer-events: none;
+}
+​
+#placesList .item .info .primary-color {
+  color: #2bc1bc;
+}
+​
+#placesList .item .info :nth-child(2) {
+  display: block;
+  margin-top: 10px;
+  pointer-events: none;
+}
+​
+#placesList .item .info:hover {
+  color: white;
+}
+​
+#placesList .info .tel {
+  margin-top: 30px;
+  color: #545252;
+  pointer-events: none;
+}
+​
+#placesList .item .markerbg {
+  float: left;
+  position: absolute;
+  width: 36px;
+  height: 37px;
+  margin: 10px 0 0 10px;
+  background: url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png)
+    no-repeat;
+}
+#placesList .item .marker_1 {
+  background-position: 0 -10px;
+}
+#placesList .item .marker_2 {
+  background-position: 0 -56px;
+}
+#placesList .item .marker_3 {
+  background-position: 0 -102px;
+}
+#placesList .item .marker_4 {
+  background-position: 0 -148px;
+}
+#placesList .item .marker_5 {
+  background-position: 0 -194px;
+}
+#placesList .item .marker_6 {
+  background-position: 0 -240px;
+}
+#placesList .item .marker_7 {
+  background-position: 0 -286px;
+}
+#placesList .item .marker_8 {
+  background-position: 0 -332px;
+}
+#placesList .item .marker_9 {
+  background-position: 0 -378px;
+}
+#placesList .item .marker_10 {
+  background-position: 0 -423px;
+}
+#placesList .item .marker_11 {
+  background-position: 0 -470px;
+}
+#placesList .item .marker_12 {
+  background-position: 0 -516px;
+}
+#placesList .item .marker_13 {
+  background-position: 0 -562px;
+}
+#placesList .item .marker_14 {
+  background-position: 0 -608px;
+}
+#placesList .item .marker_15 {
+  background-position: 0 -654px;
+}
+#pagination {
+  margin: 10px auto;
+  text-align: center;
+}
+#pagination a {
+  display: inline-block;
+  margin-right: 10px;
+}
+#pagination .on {
+  font-weight: bold;
+  cursor: default;
+  color: #777;
+}
+​
+/* 나의 style */
+#map {
+  width: 100%;
+  height: 720px;
+  overflow: hidden;
+}
+​
+.shadow {
+  box-shadow: 5px 6px 11px -1px rgba(141, 141, 141, 0.82);
+}
+​
+.fas {
+  color: black;
+}
+​
+.hover-color {
+  color: white;
+}
+​
+.info-window {
+  position: relative;
+  bottom: 90px;
+  right: 5px;
+  border-radius: 15px;
+  border: none;
+  padding: 10px 15px;
+  display: inline-block;
+  background-color: white;
+}
+​
+.info-window::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 7px solid transparent;
+  border-top-color: #ffffff;
+  border-bottom: 0;
+  margin-left: -7px;
+  margin-bottom: -7px;
+}
+​
+.info-window .info-window__info {
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: "BMHANNAPro";
+}
+​
+.info-window .info-window__info:hover {
+  font-weight: bold;
+  color: #2bc1bc;
+}
+​
+#title_wrap {
+  position: absolute;
+  top: 20px;
+  left: -12px;
+  bottom: 0;
+  width: 270px;
+  height: 50px;
+  padding: 5px;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 2;
+  border-radius: 15px;
+  background-color: #314d6d;
+  color: #2bc1bc;
+  font-family: "BMHANNAPro";
+  display: flex;
+  transition: background 0.15s ease-in-out;
+}
+​
+#title_wrap:hover {
+  background-color: #283e58;
+}
+​
+.title {
+  font-size: 1.4rem;
+  padding: 15px 5px;
+  font-family: "BMHANNAPro";
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+​
+#goBackBtn {
+  all: unset;
+  width: 28px;
+  padding: 10px 30px 5px 30px;
+  border: none;
+  border-right: 1px solid rgb(161, 161, 161);
+  background-color: inherit;
+  cursor: pointer;
+  margin-right: 25px;
+}
+​
+/* #goBackBtn:active {
+  transform: scale(0.98);
+} */
+​
+#goBackBtn:active {
+  font-size: 1.9rem;
+}
+​
+/* .fa-arrow-left {
+  position: relative;
+  top: 0px;
+  left: -22px;
+  bottom: 0;
+  width: 45px;
+  padding: 0px 10px 0px 25px;
+  color: #2bc1bc;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+​
+.fa-arrow-left:active {
+  font-size: 1.9rem;
+} */
+​
+.arrow {
+  position: relative;
+  top: 0px;
+  left: -22px;
+  bottom: 0;
+  width: 30px;
+  padding: 0px 10px 0px 25px;
+  color: #2bc1bc;
+  margin-bottom: 10px;
+}
+​
+.arrow:active {
+  transform: scale(0.95);
+}
+​
+/* 
+.fa-angle-double-down {
+  position: absolute;
+  top: 500px;
+  left: 300px;
+  bottom: 0;
+  width: 50px;
+  font-size: 3rem;
+  z-index: 2;
+  color: white;
+} */
+​
+/* ======== 제이 파트 끝 ========= */
