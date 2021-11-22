@@ -1,0 +1,20 @@
+{
+  "name": "Maemin",
+  "version": "1.0.0",
+  "description": "매일 뭐 먹을지 고민하는 사람들을 위한 메뉴 추천 서비스 <메뉴의민족>입니다. <br>\r 간단한 질문에 답하면 메뉴 추천과 함께 근처에 있는 음식점을 알려 줍니다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heejinna/Maemin.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heejinna/Maemin/issues"
+  },
+  "homepage": "https://github.com/heejinna/Maemin#readme"
+}
