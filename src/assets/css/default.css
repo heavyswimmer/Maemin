@@ -49,6 +49,28 @@ section {
   background-color: white;
 }
 
+button {
+  font-family: "BMHANNAPro";
+  background-color: var(--mint);
+  color: var(--white);
+  font-size: 1.5rem;
+  border: 0px;
+  border-radius: 10px;
+}
+
 .hide {
   display: none;
+}
+
+@media (max-width: 767px) {
+  body {
+    background-color: white;
+  }
+  main {
+    padding: 0;
+  }
+  section {
+    width: 100%;
+    border: none;
+  }
 }
