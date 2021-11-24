@@ -1,0 +1,14 @@
+#qna {
+  height: 600px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.answer {
+  text-align: left;
+  background-color: var(--mint-hover);
+  width: 75%;
+  position: absolute;
+  border-radius: 10px;
+  top: 90px;
+}
