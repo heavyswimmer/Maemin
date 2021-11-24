@@ -9,6 +9,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: #242424;
 }
 
 @keyframes fadein {
@@ -52,12 +53,12 @@ body {
 }
 
 .head {
+  overflow: visible;
   position: relative;
   top: 30px;
   opacity: 0;
   font-family: "BMHANNAPro";
-  font-size: 4rem;
-  margin-left: 20%;
+  font-size: 3.9em;
   color: white;
 
   animation: fadein-up 2s;
@@ -67,7 +68,7 @@ body {
 
 #foodName {
   font-family: "BMHANNAPro";
-  font-size: 4rem;
+  font-size: 1em;
   color: #ff9e2c;
 }
 
@@ -99,9 +100,9 @@ body {
 .hashtag {
   opacity: 0;
   font-family: "BMHANNAPro";
-  font-size: 2rem;
-  margin: 30px 20%;
+  font-size: 1.5em;
   color: #2ac1bc;
+  margin-bottom: 20px;
 
   animation: fadein 1s;
   animation-delay: 2.5s;
@@ -110,25 +111,33 @@ body {
 
 #explanation {
   font-family: "BMHANNAPro";
-  font-size: 2rem;
   color: white;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
 }
 
 #hotplace,
 #again {
   opacity: 0;
-  width: 250px;
-  height: 70px;
+  width: 180px;
+  height: 50px;
   border-radius: 8px;
   border: 0px;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: #fefbf9;
   box-shadow: 1px 7px 6px -1px #2b2a2a;
-  margin: 0 30px;
+  margin: 2px;
 
   animation: fadein-up 1s;
   animation-delay: 4s;
   animation-fill-mode: forwards;
+}
+
+#hotplace {
+  margin-right: 10px;
 }
 
 #hotplace:hover,
