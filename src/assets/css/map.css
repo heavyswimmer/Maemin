@@ -1,0 +1,324 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+/* 카카오 api css */
+.map_wrap,
+.map_wrap * {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+}
+.map_wrap a,
+.map_wrap a:hover,
+.map_wrap a:active {
+  color: #000;
+  text-decoration: none;
+}
+.map_wrap {
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+#menu_wrap {
+  min-width: 250px;
+  position: absolute;
+  top: 0;
+  left: 74vw;
+  bottom: 0;
+  height: 600px;
+  margin: 50px 30px 30px 10px;
+  padding: 5px;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 1;
+  font-size: 12px;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+#menu_wrap::-webkit-scrollbar {
+  display: none;
+}
+
+#placesList li {
+  list-style: none;
+  box-shadow: 1px 7px 6px -1px #5e5d5d;
+}
+
+@media (max-width: 780px) {
+  .map_wrap {
+    height: 100%;
+  }
+  #menu_wrap {
+    position: absolute;
+    top: 40vw;
+    left: 35vw;
+    bottom: 0;
+  }
+}
+
+#placesList .item {
+  min-height: 120px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: white;
+  margin-bottom: 15px;
+  transition: background 0.15s ease-in-out;
+}
+
+#placesList .item:hover {
+  background-color: #2bc1bc;
+}
+
+#placesList .item .info {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #858383;
+  padding: 10px 10px 10px 40px;
+  font-size: 1.7rem;
+  min-height: 100px;
+}
+
+#placesList .item .info :first-child {
+  width: 300px;
+  /* text-overflow: ellipsis; */
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 1.2rem;
+  font-family: "BMHANNAPro";
+  pointer-events: none;
+}
+
+#placesList .item .info .primary-color {
+  color: #2bc1bc;
+}
+
+#placesList .item .info .more {
+  /* position: relative;
+  left: 230px;
+  top: 10px; */
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+#placesList .item .info .more > img {
+  padding: 5px;
+  width: 25px;
+}
+
+.arrow-color {
+  filter: invert(-10%) sepia(10%) saturate(100%) hue-rotate(195deg)
+    brightness(10%) contrast(100%);
+}
+
+#placesList .item .info :nth-child(3) {
+  display: block;
+  margin-top: 10px;
+  pointer-events: none;
+}
+
+#placesList .item .info:hover {
+  color: white;
+}
+
+#placesList .info .tel {
+  margin-top: 30px;
+  color: #545252;
+  pointer-events: none;
+}
+
+#placesList .item .markerbg {
+  float: left;
+  position: absolute;
+  width: 36px;
+  height: 37px;
+  margin: 10px 0 0 10px;
+  background: url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png)
+    no-repeat;
+}
+#placesList .item .marker_1 {
+  background-position: 0 -10px;
+}
+#placesList .item .marker_2 {
+  background-position: 0 -56px;
+}
+#placesList .item .marker_3 {
+  background-position: 0 -102px;
+}
+#placesList .item .marker_4 {
+  background-position: 0 -148px;
+}
+#placesList .item .marker_5 {
+  background-position: 0 -194px;
+}
+#placesList .item .marker_6 {
+  background-position: 0 -240px;
+}
+#placesList .item .marker_7 {
+  background-position: 0 -286px;
+}
+#placesList .item .marker_8 {
+  background-position: 0 -332px;
+}
+#placesList .item .marker_9 {
+  background-position: 0 -378px;
+}
+#placesList .item .marker_10 {
+  background-position: 0 -423px;
+}
+#placesList .item .marker_11 {
+  background-position: 0 -470px;
+}
+#placesList .item .marker_12 {
+  background-position: 0 -516px;
+}
+#placesList .item .marker_13 {
+  background-position: 0 -562px;
+}
+#placesList .item .marker_14 {
+  background-position: 0 -608px;
+}
+#placesList .item .marker_15 {
+  background-position: 0 -654px;
+}
+#pagination {
+  margin: 10px auto;
+  text-align: center;
+}
+#pagination a {
+  display: inline-block;
+  margin-right: 10px;
+}
+#pagination .on {
+  font-weight: bold;
+  cursor: default;
+  color: #777;
+}
+
+/* 나의 style */
+#map {
+  width: 100%;
+  height: 720px;
+  overflow: hidden;
+}
+
+.shadow {
+  box-shadow: 5px 6px 11px -1px rgba(141, 141, 141, 0.82);
+}
+
+.fas {
+  color: black;
+}
+
+.hover-color {
+  color: white;
+}
+
+.info-window {
+  position: relative;
+  bottom: 90px;
+  right: 5px;
+  border-radius: 15px;
+  border: none;
+  padding: 10px 15px;
+  display: inline-block;
+  background-color: white;
+}
+
+.info-window::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 7px solid transparent;
+  border-top-color: #ffffff;
+  border-bottom: 0;
+  margin-left: -7px;
+  margin-bottom: -7px;
+}
+
+.info-window .info-window__info {
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: "BMHANNAPro";
+}
+
+.info-window .info-window__info:hover {
+  font-weight: bold;
+  color: #2bc1bc;
+}
+
+#title_wrap {
+  position: absolute;
+  top: 20px;
+  left: -12px;
+  bottom: 0;
+  width: 270px;
+  height: 50px;
+  padding: 5px;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 2;
+  border-radius: 15px;
+  background-color: #314d6d;
+  color: #2bc1bc;
+  font-family: "BMHANNAPro";
+  display: flex;
+  transition: background 0.15s ease-in-out;
+}
+
+#title_wrap:hover {
+  background-color: #283e58;
+}
+
+.title {
+  font-size: 1.4rem;
+  padding: 15px 5px;
+  font-family: "BMHANNAPro";
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+#goBackBtn {
+  all: unset;
+  width: 28px;
+  padding: 10px 30px 5px 30px;
+  border: none;
+  border-right: 1px solid rgb(161, 161, 161);
+  background-color: inherit;
+  cursor: pointer;
+  margin-right: 25px;
+}
+
+#goBackBtn:active {
+  font-size: 1.9rem;
+}
+
+.fa-arrow-left:active {
+  font-size: 1.9rem;
+}
+.arrow {
+  position: relative;
+  top: 0px;
+  left: -22px;
+  bottom: 0;
+  width: 30px;
+  padding: 0px 10px 0px 25px;
+  color: #2bc1bc;
+  margin-bottom: 10px;
+}
+
+.arrow:active {
+  transform: scale(0.95);
+}
