@@ -224,3 +224,104 @@ button {
   border-radius: 10px;
 }
 
+
+
+/* ===== 반응형 - mobile ===== */
+@media ( max-width: 767px ) {
+
+  .main-title {
+    width: 230px;
+  }
+  
+  #locationBox {
+    margin-bottom: 5%;
+  }
+  
+  #locationBtn {
+    top: 10px;
+    padding: 5px 1px 1px 1px;
+  }
+
+  #myLocation {
+    font-size: 0.9rem;
+  }
+ 
+  #main > p {
+    font-size: 1.2rem;
+  }
+  
+  #startBtn {
+    width: 310px;
+    height: 75px;
+  }
+  
+  #startBtn:hover {
+    color: #a7e4e2;
+    cursor: pointer;
+  }
+  
+  /* 반응형 - modal */
+  
+  #modal .modal-window {
+    width: 320px;
+    top: -0px;
+    margin-top: 10%;
+  }
+  
+  #modal .modal-title {
+    padding-left: 5px;
+  }
+  
+  #modal .modal-title h2 {
+    font-size:1.5rem;
+  }
+  
+  #modal .modal-title span{
+    font-size: 1.7rem;
+  }
+  
+  #modal .modal-content {
+    margin-top: 30px;
+  }
+  
+  #changeAdBtn {
+    height:30px;
+    margin-top: 5px;
+  }
+  
+  #mapBox {
+    margin: 10px 10px 10px -10px;
+  }  
+
+  #map1, #map2 {
+    margin: auto;
+    border-radius: 10px;
+  }
+}
+
+
+
+/* 320px 이하인 경우, 이미지 크기 & 버튼 크기 조정 */
+@media ( max-width: 320px ) {
+  .main-character {
+    width: 300px;
+  }
+
+  #startBtn {
+    width: 300px;
+    height: 60px;
+  }
+
+  /* 반응형 - modal */
+  
+  #modal .modal-window {
+    width: 305px;
+    top: -0px;
+    margin-top: 10%;
+  }
+
+  #mapBox {
+    margin: 0px 10px 10px -18px;
+  } 
+
+}
