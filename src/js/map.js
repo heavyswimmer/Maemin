@@ -24,7 +24,7 @@ function searchPlaces() {
   // ps.keywordSearch(keyword, placesSearchCB);
 
   ps.keywordSearch(keyword, placesSearchCB, {
-    location: map.getCenter(),
+    location: mapOption.center,
     radius: 1000,
     sort: kakao.maps.services.SortBy.DISTANCE,
   });
