@@ -3,8 +3,8 @@ var markers = [];
 
 var mapContainer = document.getElementById("map"), // 지도를 표시할 div
   mapOption = {
-    center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
-    level: 3, // 지도의 확대 레벨
+    center: new kakao.maps.LatLng(37.6245059502387, 126.726056403489), // 지도의 중심좌표
+    level: 2, // 지도의 확대 레벨
   };
 
 // 지도를 생성합니다
@@ -100,11 +100,9 @@ function displayPlaces(places) {
       kakao.maps.event.addListener(marker, "click", function () {
         for (var i = 0; i < places.length; i++) {
           if (customOverlay.a.innerText === places[i].place_name) {
-            window.open(
-              "https://place.map.kakao.com/" + places[i].id,
-              "카카오정보상세",
-              "top=100px, left=300px, height=800px, width=900px"
-            );
+            const embed = document.querySelector("embed");
+            embed.src = "https://place.map.kakao.com/m/" + places[i].id;
+            modalOn();
           }
         }
       });
@@ -251,11 +249,9 @@ function removeAllChildNods(el) {
 }
 
 function displayMoreInfo(id) {
-  window.open(
-    "https://place.map.kakao.com/" + id,
-    "카카오정보상세",
-    "top=100px, left=300px, height=800px, width=900px"
-  );
+  const embed = document.querySelector("embed");
+  embed.src = "https://place.map.kakao.com/m/" + id;
+  modalOn();
 }
 
 document.addEventListener("mouseover", function (event) {
@@ -308,4 +304,37 @@ backBtn.addEventListener("click", function () {
 
   const nocongrats = document.querySelector(".congrats");
   nocongrats.classList.add("nocongrats");
+});
+
+// *** 모달 *** //
+const placeModal = document.getElementById("place_modal");
+
+// = modal 창 =
+function modalOn() {
+  placeModal.style.display = "flex";
+}
+function isModalOn() {
+  return placeModal.style.display === "flex";
+}
+function modalOff() {
+  placeModal.style.display = "none";
+}
+
+const closeModal = placeModal.querySelector(".close-modal");
+closeModal.addEventListener("click", (e) => {
+  modalOff();
+});
+
+placeModal.addEventListener("click", (e) => {
+  const evTarget = e.target;
+  if (evTarget.classList.contains("modal-overlay")) {
+    // modal 바깥부분 클릭 시 modal 닫기
+    modalOff();
+  }
+});
+window.addEventListener("keyup", (e) => {
+  // esc 키 누르면 modal 없어짐
+  if (isModalOn() && e.key === "Escape") {
+    modalOff();
+  }
 });
