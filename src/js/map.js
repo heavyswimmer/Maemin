@@ -108,7 +108,10 @@ function displayPlaces(places) {
         eraseMarkerName(customOverlay);
       };
 
-      itemEl.onclick = function () {};
+      itemEl.onclick = function () {
+        const movePosition = customOverlay.n;
+        map.panTo(movePosition);
+      };
     })(marker, customOverlay);
 
     fragment.appendChild(itemEl);
