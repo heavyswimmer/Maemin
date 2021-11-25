@@ -140,7 +140,9 @@ function getListItem(index, places) {
     '<span class="primary-color">' +
     places.place_name +
     "</span>" +
-    '<span class="more">' +
+    '<span id="more" onclick="displayMoreInfo(' +
+    places.id +
+    ');">' +
     '<img src="../src/assets/images/up-arrow.png" alt="read more"/>' +
     "</span>";
 
@@ -239,6 +241,14 @@ function removeAllChildNods(el) {
   }
 }
 
+function displayMoreInfo(id) {
+  window.open(
+    "https://place.map.kakao.com/" + id,
+    "카카오정보상세",
+    "top=100px, left=300px, height=800px, width=900px"
+  );
+}
+
 document.addEventListener("mouseover", function (event) {
   const target = event.target;
   const child = target.childNodes;
@@ -249,6 +259,10 @@ document.addEventListener("mouseover", function (event) {
     // console.log(child);
     childArray[0].classList.remove("primary-color");
     childArray[0].classList.add("hover-color");
+  }
+
+  if (target.id === "more") {
+    target.previousSibling.classList.add("white-color");
   }
 });
 
@@ -261,6 +275,10 @@ document.addEventListener("mouseout", function (event) {
   if (target.className === "info") {
     childArray[0].classList.remove("hover-color");
     childArray[0].classList.add("primary-color");
+  }
+
+  if (target.id === "more") {
+    target.previousSibling.classList.remove("white-color");
   }
 });
 
