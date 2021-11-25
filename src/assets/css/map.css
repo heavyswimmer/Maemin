@@ -37,11 +37,11 @@ body {
 
 #menu_wrap {
   width: 300px;
-  position: fixed;
+  position: absolute;
   top: 0;
-  left: 75vw;
+  right: 40px;
   bottom: 0;
-  height: 650px;
+  /* height: 100%; */
   margin: 25px 30px 30px 10px;
   padding: 5px;
   overflow-y: auto;
@@ -81,7 +81,7 @@ body {
   overflow: hidden;
   white-space: nowrap;
   color: #858383;
-  padding: 10px 10px 10px 40px;
+  padding: 10px 10px 20px 40px;
   font-size: 1.7rem;
   min-height: 100px;
 }
@@ -105,14 +105,13 @@ body {
 
 #placesList .item .info #more {
   position: absolute;
-  left: 245px;
+  right: 10px;
   top: 10px;
   display: inline-block;
   overflow: hidden;
   /* pointer-events: none; */
   padding: 5px;
   border-radius: 10px;
-  z-index: 100;
 }
 
 #placesList .item .info #more > img {
@@ -125,13 +124,12 @@ body {
 
 #placesList .item .info #more:hover {
   background-color: white;
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
-/* .arrow-color {
-  filter: invert(100%) sepia(10%) saturate(100%) hue-rotate(195deg)
-    brightness(10%) contrast(100%);
-} */
+.arrow-color {
+  filter: contrast(50);
+}
 
 #placesList .item .info :nth-child(3) {
   display: block;
@@ -327,14 +325,14 @@ body {
   transform: scale(0.45);
 }
 
-@media (max-width: 768px) {
+@media (768px <= width < 1024px) {
   .map_wrap {
     height: 100%;
   }
   #menu_wrap {
     top: 60%;
     padding: 0;
-    width: 80%;
+    width: 100%;
     height: auto;
     left: 0;
     right: 0;
@@ -342,10 +340,43 @@ body {
     max-width: 360px;
     overflow-wrap: anywhere;
   }
+  #placesList {
+    padding: 10px;
+  }
 
   #title_wrap {
-    left: -40px;
-    transform: scale(0.5);
+    left: -30px;
+    transform: scale(0.9);
+  }
+
+  #placesList .item .info #more {
+    right: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .map_wrap {
+    height: 100%;
+  }
+  #menu_wrap {
+    top: 60%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    max-width: 360px;
+  }
+  #placesList {
+    padding: 10px;
+  }
+
+  #title_wrap {
+    left: -30px;
+    transform: scale(0.9);
+  }
+  #placesList .item .info #more {
+    right: 10px;
   }
 }
 
@@ -376,8 +407,8 @@ body {
   -webkit-backdrop-filter: blur(13.5px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  width: 800px;
-  height: 900px;
+  width: 55vw;
+  height: 80vh;
   position: relative;
   top: -100px;
   padding: 5px;
@@ -408,7 +439,7 @@ body {
 
 #place_modal .close-modal {
   position: absolute;
-  left: 745px;
+  right: 10px;
   top: 8px;
   cursor: pointer;
   text-shadow: 1px 1px 2px gray;
@@ -432,13 +463,51 @@ embed {
   border-radius: 5px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
+  #place_modal.modal-overlay {
+    height: 100%;
+  }
   #place_modal .modal-window {
-    width: 320px;
-    top: -0px;
-    margin-top: 10%;
+    width: 80vw;
+    height: 80vh;
   }
   #place_modal .modal-content {
-    margin-top: 30px;
+    height: 93%;
   }
 }
+
+@media (max-height: 600px) {
+  #place_modal .modal-content {
+    height: 88%;
+  }
+}
+
+@media (max-width: 767px) {
+  #place_modal.modal-overlay {
+    height: 100%;
+  }
+  #place_modal .modal-window {
+    width: 100vw;
+    height: 100vh;
+    top: -0px;
+    margin-top: 0;
+  }
+  #place_modal .modal-content {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 280px) {
+  #place_modal.modal-overlay {
+    height: 100%;
+  }
+  #place_modal .modal-window {
+    width: 100vw;
+    height: 100vh;
+    top: -0px;
+    margin-top: 0%;
+  }
+  #place_modal .modal-content {
+    margin-top: 0;
+  }
+} ;
