@@ -108,18 +108,7 @@ function displayPlaces(places) {
         eraseMarkerName(customOverlay);
       };
 
-      itemEl.onclick = function () {
-        map.setBounds(bounds);
-        for (var i = 0; i < places.length; i++) {
-          if (customOverlay.a.innerText === places[i].place_name) {
-            window.open(
-              "https://place.map.kakao.com/" + places[i].id,
-              "카카오정보상세",
-              "top=100px, left=300px, height=800px, width=900px"
-            );
-          }
-        }
-      };
+      itemEl.onclick = function () {};
     })(marker, customOverlay);
 
     fragment.appendChild(itemEl);
