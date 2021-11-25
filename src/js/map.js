@@ -21,16 +21,13 @@ function searchPlaces() {
   var keyword = document.getElementById("keyword").value;
 
   // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
-  ps.keywordSearch(keyword, placesSearchCB);
+  // ps.keywordSearch(keyword, placesSearchCB);
 
-  // // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
-  // ps.keywordSearch(keyword, placesSearchCB, {
-  //   x:유저의 x좌표.getLng(),
-  //   y:유저의 y좌표.getLat(),
-  //   location: center,
-  //   radius: 1000,
-  //   sort: kakao.maps.services.SortBy.DISTANCE,
-  // });
+  ps.keywordSearch(keyword, placesSearchCB, {
+    location: map.getCenter(),
+    radius: 1000,
+    sort: kakao.maps.services.SortBy.DISTANCE,
+  });
 }
 
 // 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
