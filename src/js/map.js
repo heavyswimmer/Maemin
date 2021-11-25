@@ -261,6 +261,7 @@ document.addEventListener("mouseover", function (event) {
     // console.log(child);
     childArray[0].classList.remove("primary-color");
     childArray[0].classList.add("hover-color");
+    childArray[1].classList.add("arrow-color");
   }
 
   if (target.id === "more") {
@@ -277,6 +278,7 @@ document.addEventListener("mouseout", function (event) {
   if (target.className === "info") {
     childArray[0].classList.remove("hover-color");
     childArray[0].classList.add("primary-color");
+    childArray[1].classList.remove("arrow-color");
   }
 
   if (target.id === "more") {
