@@ -87,7 +87,6 @@ body {
 }
 
 #placesList .item .info :first-child {
-  width: 300px;
   /* text-overflow: ellipsis; */
   overflow: hidden;
   white-space: nowrap;
@@ -100,25 +99,39 @@ body {
   color: #2bc1bc;
 }
 
-#placesList .item .info .more {
-  /* position: relative;
-  left: 230px;
-  top: 10px; */
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  pointer-events: none;
+#placesList .item .info .hover-color {
+  color: white;
 }
 
-#placesList .item .info .more > img {
+#placesList .item .info #more {
+  position: absolute;
+  left: 245px;
+  top: 10px;
+  display: inline-block;
+  overflow: hidden;
+  /* pointer-events: none; */
   padding: 5px;
+  border-radius: 10px;
+  z-index: 100;
+}
+
+#placesList .item .info #more > img {
   width: 25px;
 }
 
-.arrow-color {
-  filter: invert(-10%) sepia(10%) saturate(100%) hue-rotate(195deg)
-    brightness(10%) contrast(100%);
+#placesList .item .info .white-color {
+  color: white !important;
 }
+
+#placesList .item .info #more:hover {
+  background-color: white;
+  opacity: 0.5;
+}
+
+/* .arrow-color {
+  filter: invert(100%) sepia(10%) saturate(100%) hue-rotate(195deg)
+    brightness(10%) contrast(100%);
+} */
 
 #placesList .item .info :nth-child(3) {
   display: block;
@@ -204,7 +217,6 @@ body {
   color: #777;
 }
 
-/* 나의 style */
 #map {
   width: 100%;
   height: 720px;
@@ -217,10 +229,6 @@ body {
 
 .fas {
   color: black;
-}
-
-.hover-color {
-  color: white;
 }
 
 .info-window {
