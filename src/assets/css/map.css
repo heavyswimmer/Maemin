@@ -4,6 +4,14 @@ body {
   height: 100%;
   margin: 0;
 }
+
+#result_map {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
 /* 카카오 api css */
 .map_wrap,
 .map_wrap * {
@@ -20,19 +28,24 @@ body {
 .map_wrap {
   position: relative;
   width: 100%;
-  height: 500px;
+  height: 100%;
 }
+
+#map {
+  height: 100% !important;
+}
+
 #menu_wrap {
-  min-width: 250px;
-  position: absolute;
+  width: 300px;
+  position: fixed;
   top: 0;
-  left: 74vw;
+  left: 75vw;
   bottom: 0;
-  height: 600px;
-  margin: 50px 30px 30px 10px;
+  height: 650px;
+  margin: 25px 30px 30px 10px;
   padding: 5px;
   overflow-y: auto;
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--white);
   z-index: 1;
   font-size: 12px;
   border-radius: 10px;
@@ -46,18 +59,6 @@ body {
 #placesList li {
   list-style: none;
   box-shadow: 1px 7px 6px -1px #5e5d5d;
-}
-
-@media (max-width: 780px) {
-  .map_wrap {
-    height: 100%;
-  }
-  #menu_wrap {
-    position: absolute;
-    top: 40vw;
-    left: 35vw;
-    bottom: 0;
-  }
 }
 
 #placesList .item {
@@ -264,7 +265,7 @@ body {
   left: -12px;
   bottom: 0;
   width: 270px;
-  height: 50px;
+  height: 60px;
   padding: 5px;
   background: rgba(255, 255, 255, 0.7);
   z-index: 2;
@@ -282,23 +283,21 @@ body {
 
 .title {
   font-size: 1.4rem;
-  padding: 15px 5px;
+  padding: 10px 5px;
   font-family: "BMHANNAPro";
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   cursor: pointer;
+  margin: auto;
 }
 
 #goBackBtn {
   all: unset;
-  width: 28px;
-  padding: 10px 30px 5px 30px;
+  width: 30px;
+  padding: 13px 15px 5px 30px;
   border: none;
   border-right: 1px solid rgb(161, 161, 161);
   background-color: inherit;
   cursor: pointer;
-  margin-right: 25px;
+  margin-right: 5px;
 }
 
 #goBackBtn:active {
@@ -308,17 +307,36 @@ body {
 .fa-arrow-left:active {
   font-size: 1.9rem;
 }
+
 .arrow {
+  transform: scale(0.5);
   position: relative;
-  top: 0px;
-  left: -22px;
-  bottom: 0;
-  width: 30px;
-  padding: 0px 10px 0px 25px;
-  color: #2bc1bc;
-  margin-bottom: 10px;
+  right: 20px;
+  bottom: 21px;
 }
 
 .arrow:active {
-  transform: scale(0.95);
+  transform: scale(0.45);
+}
+
+@media (max-width: 768px) {
+  .map_wrap {
+    height: 100%;
+  }
+  #menu_wrap {
+    top: 60%;
+    padding: 0;
+    width: 80%;
+    height: auto;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 360px;
+    overflow-wrap: anywhere;
+  }
+
+  #title_wrap {
+    left: -40px;
+    transform: scale(0.5);
+  }
 }
