@@ -149,7 +149,7 @@ function getListItem(index, places) {
     places.place_name +
     "</span>" +
     '<span class="more">' +
-    '<img src="./up-arrow.png" alt="read more"/>' +
+    '<img src="../src/assets/images/up-arrow.png" alt="read more"/>' +
     "</span>";
 
   if (places.road_address_name) {
@@ -177,7 +177,7 @@ function getListItem(index, places) {
 
 // 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
 function addMarker(position, idx, title) {
-  var imageSrc = "./restaurant.png", // 마커 이미지
+  var imageSrc = "../src/assets/images/marker.png", // 마커 이미지
     imageSize = new kakao.maps.Size(40, 40), // 마커 이미지의 크기
     imgOptions = { offset: new kakao.maps.Point(27, 69) };
 
