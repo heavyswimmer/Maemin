@@ -277,6 +277,7 @@ const backBtn = document.querySelector("#goBackBtn");
 backBtn.addEventListener("click", function () {
   resultPage.classList.remove("hide");
   mapPage.classList.add("hide");
+  main.classList.remove("hide");
 
   const animationElements = document.querySelectorAll(
     ".head, .food, .hashtag, #hotplace, #again"
