@@ -1,0 +1,15 @@
+#center-img {
+  width: 120px;
+  height: 120px;
+  margin: auto;
+  /* border: 1px solid black; */
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  /* overflow: hidden; */
+}
+
+#center-img > img {
+  width: inherit;
+  height: inherit;
+  padding: 15px;
+}
