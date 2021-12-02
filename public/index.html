@@ -4,20 +4,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>메뉴의민족</title>
-  <link rel="stylesheet" href="../src/assets/css/style.css">
+  <link rel="stylesheet" href="../src/assets/css/default.css">
+  <link rel="stylesheet" href="../src/assets/css/variables.css">
+  <link rel="stylesheet" href="../src/assets/css/pages/main.css">
+  <!-- Animate.css 활용 링크 -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 </head>
 <body>
   <main>
-		<section id="main">
+		<section id="main" class="animate__animated">
       <div id="locationBox">
-        <span id="myLocation">현재 위치</span>
-        <button id="locationBtn" type="button"><img src="../src/assets/images/svg/location_button.svg" alt="location_button"></button>
+        <button id="myLocationBtn" type="button">
+          <span id="myLocation"></span>
+        </button>
+        <button id="locationBtn" type="button">
+          <img src="../src/assets/images/svg/location_button.svg" alt="location_button">
+        </button>
       </div>
-        <p>오늘 먹을 메뉴와 음식점을 한 방에</p>
-        <img class="main-title" src="../src/assets/images/svg/title.svg"/>
-        <img class="main-character" src="../src/assets/images/main_character.gif" alt="main_character">
-        <button id="startBtn" type="button" aria-label="startButton">시작하기</button>
+      <p>오늘 먹을 메뉴와 음식점을 한 방에</p>
+      <img class="main-title" src="../src/assets/images/svg/title.svg"/>
+      <img class="main-character animate__animated animate__fadeInUp" src="../src/assets/images/main_character.gif" alt="main_character" />
+      <button id="startBtn" class="animate__animated animate__fadeIn" type="button" aria-label="startButton">시작하기</button>
     </section>
+    <!-- modal 생성 (section밖에 있어야 함) -->
+    <div id="modal" class="modal-overlay">
+      <div class="modal-window">
+          <div class="modal-title">
+              <h2>어디 계신가요?</h2><span>🚀</span>
+          </div>
+          <div class="close-modal">✖️</div>
+          <div class="modal-content">
+            <!-- 주소 & 지도 -->
+            <div id="modalAddress">
+              <input type="text" id="sample5_address" placeholder="검색한 주소를 표시합니다.✍" readonly>
+              <input id="changeAdBtn" type="button" onclick="sample5_execDaumPostcode()" value="주소 검색"><br />
+            </div>
+            <div id="mapBox">
+              <div id="map1" style="width:300px;height:300px;"></div>
+              <div id="map2" style="width:300px;height:300px;margin-top:10px;display:none"></div>
+            </div>
+          </div>
+      </div>
+    </div>
+
 		<section id="qna" class="hide">
 			<div class="status">
 			  <div class="statusBar"></div>
@@ -37,7 +69,7 @@
       <button type="button" id="hotPlace" name="hotPlace">근처 맛집 보기</button>
       <button type="button" id="again" name="again">다시하기</button>
     </section>
-		<section id="result_map">
+		<section id="result_map" class="hide">
         <div class="map_wrap">
           <div id="map"></div>
           <div id="title_wrap" class="shadow">
@@ -63,6 +95,10 @@
         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=63fa682b163f3bf6a4d82e0cc007d04a&libraries=services"></script>
       </section>
 	</main>
-	<script src="../src/app.js"></script>
+  <!-- [ 시작페이지 - 현재위치 ] services 라이브러리 불러오기 -->
+  <script type="text/javascript" src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=6460658a078410600ab006984453c2d3&libraries=services"></script>
+  <script src="http://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <script src="http://dapi.kakao.com/v2/maps/sdk.js?appkey=6460658a078410600ab006984453c2d3&libraries=services"></script>
+	<script src="../src/js/main.js"></script>
 </body>
 </html>

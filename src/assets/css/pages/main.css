@@ -40,3 +40,334 @@
 #locationBtn {
   background-color: white;
 }
+
+
+/* */
+/*
+#locationBox {
+  margin: 15px 0px 30px 0px;
+}
+
+#locationBtn {
+  margin-left: 5px;
+}
+*/
+/* 레이아웃 */
+#main {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.main-title {
+  display: block;
+  width: 280px;
+  margin: auto;
+  padding-bottom: 30px;
+}
+
+button {
+  background-color: var(--mint);
+  font-family: "BMHANNAPro";
+}
+
+#locationBox {
+  text-align: center;
+}
+
+/*밑줄이 왼쪽에서 오른쪽으로 이동하는 myLocationBtn - hover 애니메이션*/
+#myLocationBtn{
+  position: relative;
+  background-color: #ffffff;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  /* margin-left: 50px; */
+}
+#myLocationBtn:after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0px;
+  height: 2px;
+  margin: 5px 0 0;
+  transition: all 0.2s ease-in-out;
+  transition-duration: 0.3s;
+  opacity: 0;
+  background-color: var(--mint);
+}
+#myLocationBtn:hover:after{
+  width: 100%;
+  opacity: 1;
+}
+/* myLocationBtn - hover 애니메이션 끝 */
+
+#myLocation {
+  font-size: 1.1rem;
+  color: var(--black);
+}
+
+#locationBtn {
+  display: inline-block;
+  top: 2px;
+  background-color: #ffffff;
+  border: 0px;
+  padding-top: 3px;
+}
+
+#locationBtn:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+#locationBtn > img {
+  width: 17px;
+}
+
+#main > p {
+  font-size: 1.5rem;
+  color: #585858;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 5%;
+}
+
+.main-character {
+  display: inline-block;
+  text-align: center;
+}
+
+#startBtn {
+  width: 500px;
+  height: 75px;
+  border-radius: 8px;
+  border: 0px;
+  font-size: 2rem;
+  color: #fefbf9;
+  box-shadow: 1px 7px 6px -1px #c5c5c5;
+
+  /* 레이아웃 */
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+  /* 메인캐릭터보다 버튼 천천히 등장 */
+  --animate-duration: 2.5s;
+}
+
+#startBtn:hover {
+  color: var(--mint-hover);
+  cursor: pointer;
+}
+
+/* modal */
+#modal.modal-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+#modal .modal-window {
+  background: rgba(42, 192, 187, 0.70);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 13.5px );
+  -webkit-backdrop-filter: blur( 13.5px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  width: 400px;
+  height: 500px;
+  position: relative;
+  top: -100px;
+  padding: 10px;
+  margin-top: 150px;
+}
+
+#modal .modal-title {
+  padding-left: 10px;
+  display: inline-block;
+  text-shadow: 1px 1px 2px gray;
+  color: var(--white);
+  margin-top: 10px;
+}
+
+#modal .modal-title h2 {
+  display: inline;
+  font-size:2rem;
+}
+
+#modal .modal-title span{
+  font-size: 2rem;
+}
+
+#modal .close-modal {
+  display: inline-block;
+  float: right;
+  margin-right: 10px;
+  cursor: pointer;
+  text-shadow: 1px 1px 2px gray;
+  color: var(--white);
+  font-size:1.5rem;
+  margin-top: 10px;
+}
+
+#modal .modal-content {
+  margin-top: 35px;
+  padding: 0px 10px;
+  text-shadow: 1px 1px 2px gray;
+  color: var(--white);
+  text-align: center;
+}
+
+/* modal 내부 주소검색 & 지도 */
+#modalAddress {
+  margin-bottom: 30px;
+}
+
+#sample5_address { /* 모달 안의 주소 input */
+  width: 230px;
+  height: 25px;
+  margin-right: 10px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid 3px var(--mint);
+  text-align: center;
+}
+
+#changeAdBtn {
+  background:var(--white);
+  color:var(--black);
+  border:none;
+  outline:none;
+  height:30px;
+  font-size:1rem;
+  padding:0 1.5em;
+  cursor:pointer;
+  border-radius: 15px;
+}
+
+#changeAdBtn:hover {
+  background-color: #d3d3d3;
+}
+
+#map1, #map2 {
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+
+
+/* ===== 반응형 - mobile ===== */
+@media ( max-width: 767px ) {
+
+  .main-title {
+    width: 230px;
+  }
+  
+  #locationBox {
+    margin-bottom: 5%;
+  }
+  
+  #locationBtn {
+    top: 10px;
+    padding: 5px 1px 1px 1px;
+  }
+
+  #myLocation {
+    font-size: 0.9rem;
+  }
+ 
+  #main > p {
+    font-size: 1.2rem;
+  }
+  
+  #startBtn {
+    width: 310px;
+    height: 75px;
+  }
+  
+  #startBtn:hover {
+    color: #a7e4e2;
+    cursor: pointer;
+  }
+  
+  /* 반응형 - modal */
+  
+  #modal .modal-window {
+    width: 320px;
+    top: -0px;
+    margin-top: 10%;
+  }
+  
+  #modal .modal-title {
+    padding-left: 5px;
+  }
+  
+  #modal .modal-title h2 {
+    font-size:1.5rem;
+  }
+  
+  #modal .modal-title span{
+    font-size: 1.7rem;
+  }
+  
+  #modal .modal-content {
+    margin-top: 30px;
+  }
+  
+  #changeAdBtn {
+    height:30px;
+    margin-top: 5px;
+  }
+  
+  #mapBox {
+    margin: 10px 10px 10px -10px;
+  }  
+
+  #map1, #map2 {
+    margin: auto;
+    border-radius: 10px;
+  }
+}
+
+
+
+/* 320px 이하인 경우, 이미지 크기 & 버튼 크기 조정 */
+@media ( max-width: 320px ) {
+  .main-character {
+    width: 300px;
+  }
+
+  #startBtn {
+    width: 300px;
+    height: 60px;
+  }
+
+  /* 반응형 - modal */
+  
+  #modal .modal-window {
+    width: 305px;
+    top: -0px;
+    margin-top: 10%;
+  }
+
+  #mapBox {
+    margin: 0px 10px 10px -18px;
+  } 
+
+}
