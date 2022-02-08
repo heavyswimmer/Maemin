@@ -42,7 +42,6 @@ function changeLodingImage() {
   loadingImagesArr[imageIndex].classList.remove("hide");
   // console.log(imageIndex);
 }
-setInterval(changeLodingImage, 200);
 
 // 로딩화면에서 결과화면으로 넘어가기 위한 함수입니다
 function showResultPage() {
@@ -52,5 +51,8 @@ function showResultPage() {
   main.classList.add("bgdark");
 }
 
-setTimeout(showResultPage, 2000);
-makeLodingImages();
+if (!loadingPage.classList.contains("hide")) {
+  setInterval(changeLodingImage, 200);
+  setTimeout(showResultPage, 2000);
+  makeLodingImages();
+}

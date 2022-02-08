@@ -248,7 +248,7 @@ function removeAllChildNods(el) {
 function displayMoreInfo(id) {
   const embed = document.querySelector("embed");
   embed.src = "https://place.map.kakao.com/m/" + id;
-  modalOn();
+  modalOn2();
 }
 
 document.addEventListener("mouseover", function (event) {
@@ -309,31 +309,31 @@ backBtn.addEventListener("click", function () {
 const placeModal = document.getElementById("place_modal");
 
 // = modal 창 =
-function modalOn() {
+function modalOn2() {
   placeModal.style.display = "flex";
 }
-function isModalOn() {
+function isModalOn2() {
   return placeModal.style.display === "flex";
 }
-function modalOff() {
+function modalOff2() {
   placeModal.style.display = "none";
 }
 
-const closeModal = placeModal.querySelector(".close-modal");
-closeModal.addEventListener("click", (e) => {
-  modalOff();
+const closeModal2 = placeModal.querySelector(".close-modal");
+closeModal2.addEventListener("click", (e) => {
+  modalOff2();
 });
 
 placeModal.addEventListener("click", (e) => {
   const evTarget = e.target;
   if (evTarget.classList.contains("modal-overlay")) {
     // modal 바깥부분 클릭 시 modal 닫기
-    modalOff();
+    modalOff2();
   }
 });
 window.addEventListener("keyup", (e) => {
   // esc 키 누르면 modal 없어짐
   if (isModalOn() && e.key === "Escape") {
-    modalOff();
+    modalOff2();
   }
 });
